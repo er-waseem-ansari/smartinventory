@@ -33,6 +33,11 @@ public class ProductItemController {
         return productItemService.getProductsByGroup(group);
     }
 
+    @GetMapping("/productName/{productName}")
+    public List<ProductItem> getProductsByProductName(@PathVariable String productName) {
+        return productItemService.getProductsByProductName(productName);
+    }
+
     @GetMapping("/company/{company}")
     public List<ProductItem> getProductsByCompany(@PathVariable String company) {
         return productItemService.getProductsByCompany(company);

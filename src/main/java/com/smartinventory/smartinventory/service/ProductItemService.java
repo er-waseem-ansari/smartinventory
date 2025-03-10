@@ -26,6 +26,10 @@ public class ProductItemService {
         return productItemRepository.findByGroup(group);
     }
 
+    public List<ProductItem> getProductsByProductName(String group) {
+        return productItemRepository.findByProductName(group);
+    }
+
     public List<ProductItem> getProductsByCompany(String company) {
         return productItemRepository.findByCompany(company);
     }
