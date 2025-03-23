@@ -64,4 +64,10 @@ public class ProductItemController {
         productItemService.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<ProductItem>> searchProducts(@RequestParam String query) {
+        List<ProductItem> results = productItemService.searchProducts(query);
+        return ResponseEntity.ok(results);
+    }
 }

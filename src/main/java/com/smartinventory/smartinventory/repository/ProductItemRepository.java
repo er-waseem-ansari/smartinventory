@@ -12,4 +12,5 @@ public interface ProductItemRepository extends JpaRepository<ProductItem, Long> 
     List<ProductItem> findByCompany(String company);
     List<ProductItem> findByLocation(String location);
     List<ProductItem> findByProductName(String group);
+    List<ProductItem> findByNameContainingIgnoreCase(String name);
 }
