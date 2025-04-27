@@ -22,8 +22,9 @@ public class ProductItem {
     private String company;
     @Column(name = "item_quantity")
     private Integer quantity;
+    @Lob
     @Column(name = "item_image")
-    private String image;
+    private String image; // Updated with @Lob
     @Column(name = "item_description")
     private String description;
 

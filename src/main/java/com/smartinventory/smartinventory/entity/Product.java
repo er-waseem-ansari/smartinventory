@@ -2,7 +2,6 @@ package com.smartinventory.smartinventory.entity;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "products")
 public class Product {
@@ -18,16 +17,20 @@ public class Product {
     private String productCategory;
     @Column(name = "product_code")
     private String productCode;
+    @Lob
+    @Column(name = "image_data")
+    private String imageData; // Added for Base64 string
 
     public Product() {
     }
 
-    public Product(Long productId, String productName, String productDescription, String productCategory, String productCode) {
+    public Product(Long productId, String productName, String productDescription, String productCategory, String productCode, String imageData) {
         this.productId = productId;
         this.productName = productName;
         this.productDescription = productDescription;
         this.productCategory = productCategory;
         this.productCode = productCode;
+        this.imageData = imageData; // Added to constructor
     }
 
     public Long getProductId() {
@@ -68,5 +71,13 @@ public class Product {
 
     public void setProductCode(String productCode) {
         this.productCode = productCode;
+    }
+
+    public String getImageData() {
+        return imageData; // Added getter
+    }
+
+    public void setImageData(String imageData) {
+        this.imageData = imageData; // Added setter
     }
 }
